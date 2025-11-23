@@ -49,7 +49,7 @@ jobs:
       # Requerimiento k) crear un 3er step (variables secretas):
       - name: variables de entorno secretas # k.1) llamado: variables de entorno secretas
         run: |
-          # k.2) imprimir variables secretas (j.1: user, j.2: password)
+          # k.2) fujosmprimir variables secretas (j.1: user, j.2: password)
           echo "user: ${{ secrets.USER }}"
           echo "password: ${{ secrets.PASSWORD }}"
           
