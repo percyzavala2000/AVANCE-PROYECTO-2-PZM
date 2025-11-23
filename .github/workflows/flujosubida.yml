@@ -35,7 +35,7 @@ jobs:
       # 1er step:
       - name: presentación # presentación
         run: |
-          Imprimir las variables de entorno (NOMBRES, APELLIDOS, EDAD)
+          # Imprimir las variables de entorno (NOMBRES, APELLIDOS, EDAD)
           echo "Nombres: $NOMBRES"
           echo "Apellidos: $APELLIDOS"
           echo "Edad: $EDAD"
@@ -43,18 +43,18 @@ jobs:
       # 2do step:
       - name: datos generales # datos generales
         run: |
-          Imprimir: "carrera de ingeniería de sistemas"
+          # Imprimir: "carrera de ingeniería de sistemas"
           echo "carrera de ingeniería de sistemas"
           
       # 3er step (variables secretas):
       - name: variables de entorno secretas # variables de entorno secretas
         run: |
-          Imprimir variables secretas (user,password)
+          # Imprimir variables secretas (user,password)
           echo "user: ${{secrets.USER}}"
           echo "password: ${{secrets.PASSWORD}}"
           
       # 4to step (variables abiertas):
       - name: variables abiertas # variables abiertas
         run: |
-          Imprimir las variables abiertas (VERSION_PROYECTO)
+          # Imprimir las variables abiertas (VERSION_PROYECTO)
           echo "Versión de mi proyecto: $VERSION_PROYECTO"
