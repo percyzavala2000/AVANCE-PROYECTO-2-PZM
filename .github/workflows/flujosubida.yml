@@ -15,22 +15,46 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
+    # Requerimiento e) Sistema operativo: linux
     runs-on: ubuntu-latest
+    
+    # Requerimientos g) y l) Definición de variables de entorno y variable abierta
+    env:
+      NOMBRES: Percy
+      APELLIDOS: Zavala Muñoz
+      EDAD: 30
+      VERSION_PROYECTO: 3.0 
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # Primer paso de la base que se mantiene (Checks-out your repository)
       - uses: actions/checkout@v4
+      
+      # *** INICIO DE LOS PASOS REQUERIDOS POR TU LISTA ***
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      # Requerimiento h) Crear un 1er step:
+      - name: presentación # h.1) llamado: presentación
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          # h.2) Imprimir las variables de entorno (NOMBRES, APELLIDOS, EDAD)
+          echo "Nombres: $NOMBRES"
+          echo "Apellidos: $APELLIDOS"
+          echo "Edad: $EDAD"
+
+      # Requerimiento i) Crear un 2do step:
+      - name: datos generales # i.1) llamado: datos generales
+        run: |
+          # i.2) imprimir: "carrera de ingeniería de sistemas"
+          echo "carrera de ingeniería de sistemas"
+          
+      # Requerimiento k) crear un 3er step (variables secretas):
+      - name: variables de entorno secretas # k.1) llamado: variables de entorno secretas
+        run: |
+          # k.2) imprimir variables secretas (j.1: user, j.2: password)
+          echo "user: ${{ secrets.USER }}"
+          echo "password: ${{ secrets.PASSWORD }}"
+          
+      # Requerimiento ll) crear un 4to step (variables abiertas):
+      - name: variables abiertas # ll.1) llamado: variables abiertas
+        run: |
+          # ll.2) imprimir las variables abiertas (VERSION_PROYECTO)
+          echo "Versión de mi proyecto: $VERSION_PROYECTO"
